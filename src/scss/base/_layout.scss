@@ -20,6 +20,26 @@
 	}
 }
 
+@keyframes floating-rotate {
+	0%,
+	100% {
+		transform: translateY(-10px) rotate(-3deg);
+	}
+	50% {
+		transform: translateY(10px) rotate(3deg);
+	}
+}
+
+@keyframes floating-rotate-reverse {
+	0%,
+	100% {
+		transform: translateY(-10px) rotate(3deg);
+	}
+	50% {
+		transform: translateY(10px) rotate(-3deg);
+	}
+}
+
 @keyframes float-up {
 	0% {
 		transform: translate(0, 0) rotate(-2deg) translateX(-5px);
@@ -50,6 +70,24 @@
 	}
 	50% {
 		transform: translateY(-30vh) rotateY(360deg);
+	}
+	75% {
+		transform: translateY(0) rotateY(360deg);
+	}
+	100% {
+		transform: translateY(0) rotateY(360deg);
+	}
+}
+
+@keyframes jump-flip-small {
+	0% {
+		transform: translateY(0) rotateY(0deg);
+	}
+	25% {
+		transform: translateY(-10vh) rotateY(180deg);
+	}
+	50% {
+		transform: translateY(-10vh) rotateY(360deg);
 	}
 	75% {
 		transform: translateY(0) rotateY(360deg);
@@ -149,7 +187,7 @@
 			width: 4%;
 			height: 10%;
 			z-index: 11;
-			.bubble04_1 {
+			.bubble04-1 {
 				position: absolute;
 				bottom: 0;
 				right: 0;
@@ -158,7 +196,7 @@
 				animation: bubble-main 4.2s ease-out infinite;
 				animation-delay: 0.6s;
 			}
-			.bubble04_2 {
+			.bubble04-2 {
 				position: absolute;
 				bottom: 30%;
 				right: 14%;
@@ -166,7 +204,7 @@
 				animation: bubble-small 3.4s ease-out infinite;
 				animation-delay: 1s;
 			}
-			.bubble04_3 {
+			.bubble04-3 {
 				position: absolute;
 				bottom: 40%;
 				right: 4%;
@@ -174,7 +212,7 @@
 				animation: bubble-small 2.7s ease-out infinite;
 				animation-delay: 1.3s;
 			}
-			.bubble04_4 {
+			.bubble04-4 {
 				position: absolute;
 				bottom: 60%;
 				right: 6%;
@@ -182,7 +220,7 @@
 				animation: bubble-small 3.6s ease-out infinite;
 				animation-delay: 1.6s;
 			}
-			.bubble04_5 {
+			.bubble04-5 {
 				position: absolute;
 				top: 10%;
 				left: 4%;
@@ -190,13 +228,56 @@
 				animation: bubble-small 3.1s ease-out infinite;
 				animation-delay: 2s;
 			}
-			.bubble04_6 {
+			.bubble04-6 {
 				position: absolute;
 				top: 0;
 				left: 0;
 				opacity: 0;
 				animation: bubble-small 2.8s ease-out infinite;
 				animation-delay: 2.3s;
+			}
+		}
+		.menu-text {
+			position: absolute;
+			top: 8%;
+			left: 4%;
+			display: flex;
+			flex-direction: column;
+			width: 20vw;
+
+			img {
+				height: auto;
+				transition: transform 0.3s ease-in-out;
+				cursor: pointer;
+				&:hover {
+					transform: scale(1.04);
+					filter: invert(0.1);
+				}
+			}
+			.menu-text-skills {
+				width: 66%;
+				margin-left: 0;
+				margin-bottom: -12%;
+			}
+			.menu-text-experience {
+				width: 89%;
+				margin-left: 20%;
+				margin-bottom: -2%;
+			}
+			.menu-text-certificate {
+				width: 100%;
+				margin-left: 6%;
+				margin-bottom: -4%;
+			}
+			.menu-text-contact {
+				width: 66%;
+				margin-left: 26%;
+			}
+			.menu-mobile-skills,
+			.menu-mobile-experience,
+			.menu-mobile-certificate,
+			.menu-mobile-contact {
+				display: none;
 			}
 		}
 	}
@@ -226,6 +307,12 @@
 			width: 6%;
 			z-index: 11;
 		}
+		.gameboy-mobile {
+			display: none;
+		}
+		.tape01-mobile {
+			display: none;
+		}
 		.clock {
 			position: absolute;
 			bottom: 30%;
@@ -233,12 +320,21 @@
 			width: 26%;
 			z-index: 11;
 		}
+		.clock-mobile {
+			display: none;
+		}
+		.tape02-mobile {
+			display: none;
+		}
 		.computer {
 			position: absolute;
 			bottom: 0;
 			left: 8%;
 			width: 52%;
 			z-index: 11;
+		}
+		.computer-mobile {
+			display: none;
 		}
 		.dog {
 			position: absolute;
@@ -281,7 +377,7 @@
 			width: 5%;
 			height: 10%;
 			z-index: 11;
-			.bubble01_1 {
+			.bubble01-1 {
 				position: absolute;
 				bottom: 0;
 				left: 0;
@@ -289,7 +385,7 @@
 				animation: bubble-main 4s ease-out infinite;
 				animation-delay: 0s;
 			}
-			.bubble01_2 {
+			.bubble01-2 {
 				position: absolute;
 				bottom: 28px;
 				right: 0;
@@ -297,7 +393,7 @@
 				animation: bubble-small 3.2s ease-out infinite;
 				animation-delay: 0.3s;
 			}
-			.bubble01_3 {
+			.bubble01-3 {
 				position: absolute;
 				bottom: 44px;
 				right: 8px;
@@ -305,7 +401,7 @@
 				animation: bubble-small 2.8s ease-out infinite;
 				animation-delay: 0.5s;
 			}
-			.bubble01_4 {
+			.bubble01-4 {
 				position: absolute;
 				bottom: 68px;
 				right: 6px;
@@ -313,7 +409,7 @@
 				animation: bubble-small 3.5s ease-out infinite;
 				animation-delay: 0.8s;
 			}
-			.bubble01_5 {
+			.bubble01-5 {
 				position: absolute;
 				bottom: 90px;
 				right: 10px;
@@ -321,7 +417,7 @@
 				animation: bubble-small 3s ease-out infinite;
 				animation-delay: 1.2s;
 			}
-			.bubble01_6 {
+			.bubble01-6 {
 				position: absolute;
 				bottom: 95px;
 				right: 28px;
@@ -329,7 +425,7 @@
 				animation: bubble-small 2.7s ease-out infinite;
 				animation-delay: 1.5s;
 			}
-			.bubble01_7 {
+			.bubble01-7 {
 				position: absolute;
 				bottom: 108px;
 				right: 20px;
@@ -337,7 +433,7 @@
 				animation: bubble-small 3.3s ease-out infinite;
 				animation-delay: 1.8s;
 			}
-			.bubble01_8 {
+			.bubble01-8 {
 				position: absolute;
 				bottom: 99px;
 				right: 12px;
@@ -353,7 +449,7 @@
 			width: 3%;
 			height: 5%;
 			z-index: 11;
-			.bubble02_1 {
+			.bubble02-1 {
 				position: absolute;
 				bottom: 0;
 				left: 0;
@@ -361,7 +457,7 @@
 				animation: bubble-main 4.5s ease-out infinite;
 				animation-delay: 1.2s;
 			}
-			.bubble02_2 {
+			.bubble02-2 {
 				position: absolute;
 				bottom: 28px;
 				right: 0;
@@ -369,7 +465,7 @@
 				animation: bubble-small 3.5s ease-out infinite;
 				animation-delay: 1.6s;
 			}
-			.bubble02_3 {
+			.bubble02-3 {
 				position: absolute;
 				bottom: 44px;
 				right: 8px;
@@ -377,7 +473,7 @@
 				animation: bubble-small 3s ease-out infinite;
 				animation-delay: 1.9s;
 			}
-			.bubble02_4 {
+			.bubble02-4 {
 				position: absolute;
 				bottom: 68px;
 				right: 6px;
@@ -385,7 +481,7 @@
 				animation: bubble-small 3.8s ease-out infinite;
 				animation-delay: 2.3s;
 			}
-			.bubble02_5 {
+			.bubble02-5 {
 				position: absolute;
 				bottom: 90px;
 				right: 10px;
@@ -401,7 +497,7 @@
 			width: 3%;
 			height: 5%;
 			z-index: 11;
-			.bubble03_1 {
+			.bubble03-1 {
 				position: absolute;
 				bottom: 0;
 				left: 0;
@@ -409,7 +505,7 @@
 				animation: bubble-main 3.8s ease-out infinite;
 				animation-delay: 2.4s;
 			}
-			.bubble03_2 {
+			.bubble03-2 {
 				position: absolute;
 				bottom: 28px;
 				right: 0;
@@ -417,7 +513,7 @@
 				animation: bubble-small 3.1s ease-out infinite;
 				animation-delay: 2.7s;
 			}
-			.bubble03_3 {
+			.bubble03-3 {
 				position: absolute;
 				bottom: 44px;
 				right: 8px;
@@ -425,7 +521,7 @@
 				animation: bubble-small 2.6s ease-out infinite;
 				animation-delay: 3s;
 			}
-			.bubble03_4 {
+			.bubble03-4 {
 				position: absolute;
 				bottom: 68px;
 				right: 6px;
@@ -433,13 +529,182 @@
 				animation: bubble-small 3.4s ease-out infinite;
 				animation-delay: 3.3s;
 			}
-			.bubble03_5 {
+			.bubble03-5 {
 				position: absolute;
 				bottom: 90px;
 				right: 10px;
 				opacity: 0;
 				animation: bubble-small 2.9s ease-out infinite;
 				animation-delay: 3.6s;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+	.container {
+		.content {
+			.logo {
+				width: 50%;
+				left: unset;
+				right: 50%;
+				transform: translateX(50%);
+			}
+			.dolphin {
+				right: unset;
+				left: 18%;
+			}
+			.jellyfish {
+				width: 8%;
+			}
+			.menu-text {
+				position: absolute;
+				left: 0;
+				top: 26%;
+				width: 100%;
+				height: 40%;
+				.menu-text-skills,
+				.menu-text-experience,
+				.menu-text-certificate,
+				.menu-text-contact {
+					display: none;
+				}
+				.menu-mobile-skills,
+				.menu-mobile-experience,
+				.menu-mobile-certificate,
+				.menu-mobile-contact {
+					display: block;
+					width: 40%;
+					margin: 20px auto;
+				}
+			}
+		}
+		// footer {
+		// 	.computer {
+		// 		display: none;
+		// 	}
+		// 	.computer-mobile {
+		// 		display: block;
+		// 		position: absolute;
+		// 		right: 50%;
+		// 		bottom: 0;
+		// 		width: 30%;
+		// 		z-index: 11;
+		// 	}
+		// }
+	}
+}
+
+@media screen and (max-width: 650px) and (orientation: portrait) {
+	.container {
+		.content {
+			.logo {
+				width: 70%;
+				top: 10%;
+			}
+			.dolphin {
+				width: 16%;
+				top: 8%;
+				left: 6%;
+			}
+			.jellyfish {
+				width: 10%;
+			}
+			.menu-text {
+				top: 54%;
+				transform: translateY(-50%);
+				z-index: 12;
+				.menu-mobile-skills,
+				.menu-mobile-experience,
+				.menu-mobile-certificate,
+				.menu-mobile-contact {
+					width: 46%;
+					margin: 12px auto;
+				}
+			}
+		}
+		footer {
+			height: 20%;
+			.computer {
+				display: none;
+			}
+			.computer-mobile {
+				display: block;
+				position: absolute;
+				bottom: 0;
+				z-index: 11;
+				width: 44%;
+				right: 30%;
+			}
+			.disk {
+				width: 8%;
+				bottom: 54%;
+			}
+			.gameboy-mobile {
+				display: block;
+				position: absolute;
+				width: 12%;
+				left: 2%;
+				bottom: 64vh;
+				z-index: 2;
+				animation: floating-rotate-reverse 4s ease-in-out infinite;
+				transform-origin: center;
+			}
+			.tape01-mobile {
+				display: block;
+				position: absolute;
+				width: 24%;
+				left: -10%;
+				bottom: 62vh;
+				z-index: 1;
+				animation: floating-rotate 4s ease-in-out infinite;
+				transform-origin: center;
+			}
+			.clock {
+				display: none;
+			}
+			.clock-mobile {
+				display: block;
+				position: absolute;
+				width: 12%;
+				right: 1%;
+				bottom: 48vh;
+				z-index: 2;
+				animation: floating-rotate 4s ease-in-out infinite;
+				transform-origin: center;
+			}
+			.tape02-mobile {
+				display: block;
+				position: absolute;
+				width: 24%;
+				right: -6%;
+				bottom: 47vh;
+				z-index: 1;
+				animation: floating-rotate-reverse 4s ease-in-out infinite;
+				transform-origin: center;
+			}
+			.book {
+				width: 8%;
+				bottom: 40%;
+			}
+			.dog {
+				width: 18%;
+				right: 24%;
+				bottom: 70%;
+			}
+			.bottle {
+				width: 5%;
+				bottom: 60%;
+				right: 12%;
+			}
+			.fish {
+				width: 10%;
+				left: 9%;
+			}
+			.starfish {
+				width: 10%;
+				right: 2%;
+				animation: jump-flip-small 2s ease-in-out infinite;
 			}
 		}
 	}
