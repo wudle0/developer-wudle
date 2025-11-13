@@ -97,14 +97,18 @@ const IntroPage = () => {
 				<img class="desk" src={deskSvg} alt="the desk" />
 				<img class="disk" src={diskSvg} alt="the disk" />
 				<img class="book" src={bookSvg} alt="the book" />
-				<img class="computer" src={tapeComputerSvg} alt="the computer with tape" />
+				<div class="computer-with-dog">
+					<img class="computer" src={tapeComputerSvg} alt="the computer with tape" />
+					<img class="dog" src={dogSvg} alt="the dog" />
+				</div>
 				<img class="computer-mobile" src={computerSvg} alt="the computer" />
+				<img class="dog-mobile" src={dogSvg} alt="the dog" />
 				<img class="tape01-mobile" src={tape01Svg} alt="tape 01" />
 				<img class="gameboy-mobile" src={gameboySvg} alt="the gameboy" />
 				<img class="clock" src={tapeClockSvg} alt="the clock with tape" />
 				<img class="clock-mobile" src={clockSvg} alt="the clock" />
 				<img class="tape02-mobile" src={tape02Svg} alt="tape 02" />
-				<img class="dog" src={dogSvg} alt="the dog" />
+
 				<img class="bottle" src={bottleSvg} alt="the bottle" />
 				<img class="starfish" src={starfishSvg} alt="the starfish" />
 				<img class="fish" src={fishSvg} alt="the fish" />
