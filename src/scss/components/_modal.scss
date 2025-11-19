@@ -1,0 +1,193 @@
+@use "../abstracts" as *;
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Sixtyfour&display=swap");
+
+.modal-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 21;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	.modal {
+		overflow: auto;
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		transform: translate(50%, -50%);
+		padding: 30px;
+		width: calc(100% - 40px);
+		height: calc(100% - 40px);
+		background: url("/src/images/modal_bg_border.png") no-repeat center center / cover;
+
+		.btn-close {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+			width: 44px;
+			height: 44px;
+			background: url("/src/images/button_close.png") no-repeat center center / cover;
+			font-size: 0;
+		}
+		.modal-title {
+			margin-top: 8px;
+			text-align: center;
+		}
+
+		&.skills {
+			max-width: 836px;
+			max-height: 746px;
+			.modal-title {
+				font-size: 32px;
+				font-family: "Bitcount Grid Single", system-ui;
+				font-optical-sizing: auto;
+				font-weight: 500;
+				font-style: normal;
+				color: #002a51;
+			}
+			.modal-list {
+				display: flex;
+				gap: 16px;
+				margin-top: 30px;
+				font-size: 18px;
+				font-family: "NeoDunggeunmo Pro", system-ui;
+				font-optical-sizing: auto;
+				font-weight: 400;
+				font-style: normal;
+				color: #002a51;
+				.modal-item {
+					padding: 8px;
+					width: 100%;
+					height: 344px;
+					background: url("/src/images/modal_bg_item.png") no-repeat center center / cover;
+					.modal-item-title {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						padding: 11px 0;
+						background: #13a8e6;
+						font-size: 20px;
+						color: #fff;
+					}
+					.modal-item-content {
+						margin-top: 12px;
+						height: calc(100% - 54px);
+						ul {
+							height: 100%;
+							background: #fff;
+							li {
+								padding: 10px;
+								text-align: center;
+								cursor: pointer;
+								&:hover {
+									transform: scale(1.05);
+									background: rgba(255, 67, 70, 0.15);
+									color: #ff4346;
+								}
+							}
+						}
+					}
+				}
+			}
+			.modal-selected {
+				margin-top: 32px;
+				.modal-selected-title {
+					text-align: center;
+					font-size: 24px;
+					font-family: "NeoDunggeunmo Pro", system-ui;
+					font-optical-sizing: auto;
+					font-weight: 400;
+				}
+				.modal-selected-item {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-top: 12px;
+					width: 100%;
+					height: 196px;
+					background: url("/src/images/modal_bg_select.png") no-repeat center center / cover;
+					.modal-selected-item-text {
+						font-size: 18px;
+						font-family: "NeoDunggeunmo Pro", system-ui;
+						font-optical-sizing: auto;
+						font-weight: 400;
+					}
+					.modal-selected-item-icon {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						gap: 16px;
+						font-size: 18px;
+						font-family: "NeoDunggeunmo Pro", system-ui;
+						font-optical-sizing: auto;
+						font-weight: 400;
+					}
+					img {
+						width: 80px;
+						height: 80px;
+						object-fit: contain;
+					}
+				}
+			}
+
+			@media screen and (max-width: 899px) {
+				.btn-close {
+					width: 28px;
+					height: 28px;
+				}
+				.modal-title {
+					font-size: 24px;
+				}
+				.modal-list {
+					flex-wrap: wrap;
+					margin-top: 16px;
+					.modal-item {
+						position: relative;
+						padding: 0;
+						width: calc(50% - 8px);
+						height: 180px;
+						background: #fff;
+						.modal-item-title {
+							position: absolute;
+							top: 0;
+							right: 0;
+							width: 100%;
+						}
+						.modal-item-content {
+							overflow: auto;
+							padding-top: 42px;
+							height: 100%;
+							margin-top: 0;
+							background: none;
+							ul {
+								li {
+									padding: 6px;
+								}
+							}
+						}
+					}
+				}
+				.modal-selected {
+					margin-top: 16px;
+					.modal-selected-title {
+						font-size: 20px;
+					}
+					.modal-selected-item {
+						margin-top: 8px;
+						height: 120px;
+						img {
+							width: 40px;
+							height: 40px;
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 899px) {
+			padding: 20px 16px;
+		}
+	}
+}

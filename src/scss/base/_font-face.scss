@@ -33,3 +33,11 @@
 		url("/fonts/PretendardJP-Bold.woff") format("woff");
 	font-display: swap;
 }
+
+@font-face {
+	font-family: "NeoDunggeunmo Pro";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/fonts/NeoDunggeunmoPro-Regular.woff2") format("woff2");
+	font-display: swap;
+}

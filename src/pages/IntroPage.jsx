@@ -1,5 +1,5 @@
-import React from "react";
-import MenuList from "../components/MenuList";
+import React, { useState } from "react";
+import SkillsModal from "../components/SkillsModal";
 import logoSvg from "../images/logo.svg";
 import deskSvg from "../images/desk.png";
 import diskSvg from "../images/disk.png";
@@ -51,92 +51,109 @@ import tape01Svg from "../images/tape01.png";
 import tape02Svg from "../images/tape02.png";
 
 const IntroPage = () => {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
 	return (
 		<div className="container intro">
 			<section className="content">
-				<img class="logo" src={logoSvg} alt="developer wudle" />
-				<img class="dolphin" src={dolphinSvg} alt="the dolphin" />
-				<img class="jellyfish" src={jellyfishSvg} alt="the jellyfish" />
+				<img className="logo" src={logoSvg} alt="developer wudle" />
+				<img className="dolphin" src={dolphinSvg} alt="the dolphin" />
+				<img className="jellyfish" src={jellyfishSvg} alt="the jellyfish" />
 				<div className="menu-text">
-					<img class="menu-text-skills" src={menuTextSkillsSvg} alt="menu text skills" />
 					<img
-						class="menu-text-experience"
+						className="menu-text-skills"
+						src={menuTextSkillsSvg}
+						alt="menu text skills"
+						onClick={() => setIsModalOpen(true)}
+					/>
+					<img
+						className="menu-text-experience"
 						src={menuTextExperienceSvg}
 						alt="menu text experience"
 					/>
 					<img
-						class="menu-text-certificate"
+						className="menu-text-certificate"
 						src={menuTextCertificateSvg}
 						alt="menu text certificate"
 					/>
-					<img class="menu-text-contact" src={menuTextContactSvg} alt="menu text contact" />
-					<img class="menu-mobile-skills" src={menuMobileSkillsSvg} alt="menu mobile skills" />
+					<img className="menu-text-contact" src={menuTextContactSvg} alt="menu text contact" />
 					<img
-						class="menu-mobile-experience"
+						className="menu-mobile-skills"
+						src={menuMobileSkillsSvg}
+						alt="menu mobile skills"
+						onClick={() => setIsModalOpen(true)}
+					/>
+					<img
+						className="menu-mobile-experience"
 						src={menuMobileExperienceSvg}
 						alt="menu mobile experience"
 					/>
 					<img
-						class="menu-mobile-certificate"
+						className="menu-mobile-certificate"
 						src={menuMobileCertificateSvg}
 						alt="menu mobile certificate"
 					/>
-					<img class="menu-mobile-contact" src={menuMobileContactSvg} alt="menu mobile contact" />
+					<img
+						className="menu-mobile-contact"
+						src={menuMobileContactSvg}
+						alt="menu mobile contact"
+					/>
 				</div>
 
 				<div className="bubble04">
-					<img class="bubble04-1" src={bubbleSvg_4_1} alt="" />
-					<img class="bubble04-2" src={bubbleSvg_4_2} alt="" />
-					<img class="bubble04-3" src={bubbleSvg_4_3} alt="" />
-					<img class="bubble04-4" src={bubbleSvg_4_4} alt="" />
-					<img class="bubble04-5" src={bubbleSvg_4_5} alt="" />
-					<img class="bubble04-6" src={bubbleSvg_4_6} alt="" />
+					<img className="bubble04-1" src={bubbleSvg_4_1} alt="" />
+					<img className="bubble04-2" src={bubbleSvg_4_2} alt="" />
+					<img className="bubble04-3" src={bubbleSvg_4_3} alt="" />
+					<img className="bubble04-4" src={bubbleSvg_4_4} alt="" />
+					<img className="bubble04-5" src={bubbleSvg_4_5} alt="" />
+					<img className="bubble04-6" src={bubbleSvg_4_6} alt="" />
 				</div>
 			</section>
 			<footer>
-				<img class="desk" src={deskSvg} alt="the desk" />
-				<img class="disk" src={diskSvg} alt="the disk" />
-				<img class="book" src={bookSvg} alt="the book" />
-				<div class="computer-with-dog">
-					<img class="computer" src={tapeComputerSvg} alt="the computer with tape" />
-					<img class="dog" src={dogSvg} alt="the dog" />
+				<img className="desk" src={deskSvg} alt="the desk" />
+				<img className="disk" src={diskSvg} alt="the disk" />
+				<img className="book" src={bookSvg} alt="the book" />
+				<div className="computer-with-dog">
+					<img className="computer" src={tapeComputerSvg} alt="the computer with tape" />
+					<img className="dog" src={dogSvg} alt="the dog" />
 				</div>
-				<img class="computer-mobile" src={computerSvg} alt="the computer" />
-				<img class="dog-mobile" src={dogSvg} alt="the dog" />
-				<img class="tape01-mobile" src={tape01Svg} alt="tape 01" />
-				<img class="gameboy-mobile" src={gameboySvg} alt="the gameboy" />
-				<img class="clock" src={tapeClockSvg} alt="the clock with tape" />
-				<img class="clock-mobile" src={clockSvg} alt="the clock" />
-				<img class="tape02-mobile" src={tape02Svg} alt="tape 02" />
+				<img className="computer-mobile" src={computerSvg} alt="the computer" />
+				<img className="dog-mobile" src={dogSvg} alt="the dog" />
+				<img className="tape01-mobile" src={tape01Svg} alt="tape 01" />
+				<img className="gameboy-mobile" src={gameboySvg} alt="the gameboy" />
+				<img className="clock" src={tapeClockSvg} alt="the clock with tape" />
+				<img className="clock-mobile" src={clockSvg} alt="the clock" />
+				<img className="tape02-mobile" src={tape02Svg} alt="tape 02" />
 
-				<img class="bottle" src={bottleSvg} alt="the bottle" />
-				<img class="starfish" src={starfishSvg} alt="the starfish" />
-				<img class="fish" src={fishSvg} alt="the fish" />
+				<img className="bottle" src={bottleSvg} alt="the bottle" />
+				<img className="starfish" src={starfishSvg} alt="the starfish" />
+				<img className="fish" src={fishSvg} alt="the fish" />
 				<div className="bubble01">
-					<img class="bubble01-1" src={bubbleSvg_1_1} alt="" />
-					<img class="bubble01-2" src={bubbleSvg_1_2} alt="" />
-					<img class="bubble01-3" src={bubbleSvg_1_3} alt="" />
-					<img class="bubble01-4" src={bubbleSvg_1_4} alt="" />
-					<img class="bubble01-5" src={bubbleSvg_1_5} alt="" />
-					<img class="bubble01-6" src={bubbleSvg_1_6} alt="" />
-					<img class="bubble01-7" src={bubbleSvg_1_7} alt="" />
-					<img class="bubble01-8" src={bubbleSvg_1_8} alt="" />
+					<img className="bubble01-1" src={bubbleSvg_1_1} alt="" />
+					<img className="bubble01-2" src={bubbleSvg_1_2} alt="" />
+					<img className="bubble01-3" src={bubbleSvg_1_3} alt="" />
+					<img className="bubble01-4" src={bubbleSvg_1_4} alt="" />
+					<img className="bubble01-5" src={bubbleSvg_1_5} alt="" />
+					<img className="bubble01-6" src={bubbleSvg_1_6} alt="" />
+					<img className="bubble01-7" src={bubbleSvg_1_7} alt="" />
+					<img className="bubble01-8" src={bubbleSvg_1_8} alt="" />
 				</div>
 				<div className="bubble02">
-					<img class="bubble02-1" src={bubbleSvg_2_1} alt="" />
-					<img class="bubble02-2" src={bubbleSvg_2_2} alt="" />
-					<img class="bubble02-3" src={bubbleSvg_2_3} alt="" />
-					<img class="bubble02-4" src={bubbleSvg_2_4} alt="" />
-					<img class="bubble02-5" src={bubbleSvg_2_5} alt="" />
+					<img className="bubble02-1" src={bubbleSvg_2_1} alt="" />
+					<img className="bubble02-2" src={bubbleSvg_2_2} alt="" />
+					<img className="bubble02-3" src={bubbleSvg_2_3} alt="" />
+					<img className="bubble02-4" src={bubbleSvg_2_4} alt="" />
+					<img className="bubble02-5" src={bubbleSvg_2_5} alt="" />
 				</div>
 				<div className="bubble03">
-					<img class="bubble03-1" src={bubbleSvg_3_1} alt="" />
-					<img class="bubble03-2" src={bubbleSvg_3_2} alt="" />
-					<img class="bubble03-3" src={bubbleSvg_3_3} alt="" />
-					<img class="bubble03-4" src={bubbleSvg_3_4} alt="" />
-					<img class="bubble03-5" src={bubbleSvg_3_5} alt="" />
+					<img className="bubble03-1" src={bubbleSvg_3_1} alt="" />
+					<img className="bubble03-2" src={bubbleSvg_3_2} alt="" />
+					<img className="bubble03-3" src={bubbleSvg_3_3} alt="" />
+					<img className="bubble03-4" src={bubbleSvg_3_4} alt="" />
+					<img className="bubble03-5" src={bubbleSvg_3_5} alt="" />
 				</div>
 			</footer>
+			<SkillsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 		</div>
 	);
 };
