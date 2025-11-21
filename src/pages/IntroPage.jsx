@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import SkillsModal from "../components/SkillsModal";
+import ExperienceModal from "../components/ExperienceModal";
+import CertificateModal from "../components/CertificateModal";
+import ContactModal from "../components/ContactModal";
 import logoSvg from "../images/logo.svg";
 import deskSvg from "../images/desk.png";
 import diskSvg from "../images/disk.png";
@@ -51,8 +54,10 @@ import tape01Svg from "../images/tape01.png";
 import tape02Svg from "../images/tape02.png";
 
 const IntroPage = () => {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-
+	const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
+	const [isExperienceModalOpen, setIsExperienceModalOpen] = useState(false);
+	const [isCertificateModalOpen, setIsCertificateModalOpen] = useState(false);
+	const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 	return (
 		<div className="container intro">
 			<section className="content">
@@ -64,39 +69,49 @@ const IntroPage = () => {
 						className="menu-text-skills"
 						src={menuTextSkillsSvg}
 						alt="menu text skills"
-						onClick={() => setIsModalOpen(true)}
+						onClick={() => setIsSkillsModalOpen(true)}
 					/>
 					<img
 						className="menu-text-experience"
 						src={menuTextExperienceSvg}
 						alt="menu text experience"
+						onClick={() => setIsExperienceModalOpen(true)}
 					/>
 					<img
 						className="menu-text-certificate"
 						src={menuTextCertificateSvg}
 						alt="menu text certificate"
+						onClick={() => setIsCertificateModalOpen(true)}
 					/>
-					<img className="menu-text-contact" src={menuTextContactSvg} alt="menu text contact" />
+					<img
+						className="menu-text-contact"
+						src={menuTextContactSvg}
+						alt="menu text contact"
+						onClick={() => setIsContactModalOpen(true)}
+					/>
 					<img
 						className="menu-mobile-skills"
 						src={menuMobileSkillsSvg}
 						alt="menu mobile skills"
-						onClick={() => setIsModalOpen(true)}
+						onClick={() => setIsSkillsModalOpen(true)}
 					/>
 					<img
 						className="menu-mobile-experience"
 						src={menuMobileExperienceSvg}
 						alt="menu mobile experience"
+						onClick={() => setIsExperienceModalOpen(true)}
 					/>
 					<img
 						className="menu-mobile-certificate"
 						src={menuMobileCertificateSvg}
 						alt="menu mobile certificate"
+						onClick={() => setIsCertificateModalOpen(true)}
 					/>
 					<img
 						className="menu-mobile-contact"
 						src={menuMobileContactSvg}
 						alt="menu mobile contact"
+						onClick={() => setIsContactModalOpen(true)}
 					/>
 				</div>
 
@@ -153,7 +168,16 @@ const IntroPage = () => {
 					<img className="bubble03-5" src={bubbleSvg_3_5} alt="" />
 				</div>
 			</footer>
-			<SkillsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+			<SkillsModal isOpen={isSkillsModalOpen} onClose={() => setIsSkillsModalOpen(false)} />
+			<ExperienceModal
+				isOpen={isExperienceModalOpen}
+				onClose={() => setIsExperienceModalOpen(false)}
+			/>
+			<CertificateModal
+				isOpen={isCertificateModalOpen}
+				onClose={() => setIsCertificateModalOpen(false)}
+			/>
+			<ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
 		</div>
 	);
 };
